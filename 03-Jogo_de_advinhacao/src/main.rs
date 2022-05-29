@@ -25,9 +25,12 @@ fn main() {
         println!("Você disse: {}", palpite);
 
         match palpite.cmp(&numero_secreto) {
-            Ordering::Less => println!("Muito baixo!"),
+            Ordering::Less => println!("Muito baixo"),
             Ordering::Greater => println!("Muito alto!"),
-            Ordering::Equal => println!("Você acertou!"),
+            Ordering::Equal => {
+                println!("Você acertou!");
+                break;
+            }
         }
     }
 }
